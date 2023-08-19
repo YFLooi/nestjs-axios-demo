@@ -1,5 +1,5 @@
-import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
-import { IsNumber, IsObject, IsString } from 'class-validator';
+import { ApiProperty } from '@nestjs/swagger';
+import { IsObject, IsString } from 'class-validator';
 
 export class AddNewObjectDto {
   @ApiProperty({
