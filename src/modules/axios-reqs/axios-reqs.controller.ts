@@ -23,13 +23,15 @@ import {
 export class AxiosReqsController {
   constructor(private readonly httpService: HttpService) {}
 
-  @Get('get-biography/:item')
+  @Get('get-biography/:itemNumber')
   @ApiOperation({
     description: 'Pass in any positive integer to return a Star Wars biography',
   })
-  async getSwapiBiography(@Param('item') item: string): Promise<AxiosResponse> {
+  async getSwapiBiography(
+    @Param('itemNumber') itemNumber: string,
+  ): Promise<AxiosResponse> {
     return this.httpService.axiosRef
-      .get(`https://swapi.dev/api/people/${item}`)
+      .get(`https://swapi.dev/api/people/${itemNumber}`)
       .then((res) => res.data)
       .catch((err) => {
         throw new Error(err?.message);
@@ -74,11 +76,6 @@ export class AxiosReqsController {
     @Param('itemId') itemId: string,
     @Body('') body: UpdateExistingObjectDto,
   ): Promise<AxiosResponse> {
-    console.log('updateObject:', {
-      itemId,
-      body,
-    });
-
     return this.httpService.axiosRef
       .put(`https://api.restful-api.dev/objects/${itemId}`, body, {
         headers: { 'Content-Type': 'application/json' },
@@ -113,9 +110,7 @@ export class AxiosReqsController {
     description:
       'Delete object in list. itemId returned by POST to /add-new-object',
   })
-  async getSwapiPeople(
-    @Param('itemId') itemId: string,
-  ): Promise<AxiosResponse> {
+  async deleteObject(@Param('itemId') itemId: string): Promise<AxiosResponse> {
     return this.httpService.axiosRef
       .delete(`https://api.restful-api.dev/objects/${itemId}`)
       .then((res) => res.data)
