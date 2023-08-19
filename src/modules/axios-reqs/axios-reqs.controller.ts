@@ -34,7 +34,9 @@ export class AxiosReqsController {
       .get(`https://swapi.dev/api/people/${itemNumber}`)
       .then((res) => res.data)
       .catch((err) => {
-        throw new Error(err?.message);
+        throw new Error(
+          err?.message + ': ' + JSON.stringify(err?.response?.data),
+        );
       });
   }
 
@@ -47,7 +49,9 @@ export class AxiosReqsController {
       .get(`https://api.restful-api.dev/objects`)
       .then((res) => res.data)
       .catch((err) => {
-        throw new Error(err?.message);
+        throw new Error(
+          err?.message + ': ' + JSON.stringify(err?.response?.data),
+        );
       });
   }
 
@@ -63,7 +67,9 @@ export class AxiosReqsController {
       })
       .then((res) => res.data)
       .catch((err) => {
-        throw new Error(err?.message);
+        throw new Error(
+          err?.message + ': ' + JSON.stringify(err?.response?.data),
+        );
       });
   }
 
@@ -82,7 +88,9 @@ export class AxiosReqsController {
       })
       .then((res) => res.data)
       .catch((err) => {
-        throw new Error(err?.message);
+        throw new Error(
+          err?.message + ': ' + JSON.stringify(err?.response?.data),
+        );
       });
   }
 
@@ -101,7 +109,9 @@ export class AxiosReqsController {
       })
       .then((res) => res.data)
       .catch((err) => {
-        throw new Error(err?.message);
+        throw new Error(
+          err?.message + ': ' + JSON.stringify(err?.response?.data),
+        );
       });
   }
 
@@ -115,7 +125,9 @@ export class AxiosReqsController {
       .delete(`https://api.restful-api.dev/objects/${itemId}`)
       .then((res) => res.data)
       .catch((err) => {
-        throw new Error(err?.message);
+        throw new Error(
+          err?.message + ': ' + JSON.stringify(err?.response?.data),
+        );
       });
   }
 }
