@@ -2,6 +2,10 @@
 
 A set of examples showing how to implement nestjs-http in your project
 
+Request responses are mocked by calls to the following public APIs:
+1. https://restful-api.dev/
+2. https://swapi.dev/
+
 ## Installation
 
 ```bash
