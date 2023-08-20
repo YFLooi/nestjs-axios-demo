@@ -1,9 +1,7 @@
-import { Controller, Get, Param } from '@nestjs/common';
+import { Controller, Get } from '@nestjs/common';
 import { AppService } from './app.service';
-import { AxiosResponse } from 'axios';
 import { HttpService } from '@nestjs/axios';
 import { ApiBearerAuth, ApiOperation, ApiTags } from '@nestjs/swagger';
-import { Observable, catchError, firstValueFrom } from 'rxjs';
 
 @ApiBearerAuth()
 @ApiTags('app')

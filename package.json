@@ -1,10 +1,10 @@
 {
-  "name": "nestjs-httpservice-demo",
+  "name": "nestjs-axios-demo",
   "version": "0.0.1",
-  "description": "",
-  "author": "",
-  "private": true,
-  "license": "UNLICENSED",
+  "description": "Demo on using @nestjs/axios package",
+  "author": "YF Looi",
+  "private": false,
+  "license": "MIT",
   "scripts": {
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
